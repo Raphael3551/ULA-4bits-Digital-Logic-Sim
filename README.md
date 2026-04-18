@@ -26,11 +26,9 @@ O somador completo é construído utilizando portas XOR, AND e OR. Ele processa 
 
 ### Subtrator (Via Complemento de 2)
 
-A lógica de subtração é implementada sobre a estrutura do somador. Para subtrair, aplicamos a negação (Porta NOT) no segundo operando e somamos 1 ao resultado (lógica de Complemento de 2).
+A lógica de subtração é implementada sobre a estrutura do somador. Para subtrair, aplica-se a negação (Porta NOT) no segundo operando e soma-se 1 ao resultado (lógica de Complemento de 2).
 
-    Implementação: Utilizamos um Multiplexador (MUX) na entrada B. Quando a seleção é ativada (1), o MUX envia o valor negado ao somador e injeta simultaneamente o bit 1 no Carry-in inicial, realizando a operação A−B.
-
-    Nota técnica: No seu texto original, você chamou o subtrator de "Full Adder", mas o termo correto para o conjunto que soma e subtrai costuma ser Somador/Subtrator Combinado.
+> Implementação: Utiliza-se um Multiplexador (MUX) na entrada B. Quando a seleção é ativada (1), o MUX envia o valor negado ao somador e injeta simultaneamente o bit 1 no Carry-in inicial, realizando a operação A−B.
 
 ### Multiplicador (Shift and Add)
 
@@ -40,21 +38,22 @@ A multiplicação baseia-se na lógica de deslocamento e soma. Cada bit do segun
 
 O divisor utiliza um algoritmo iterativo de deslocamento. O dividendo é percorrido do bit mais significativo para o menos significativo, formando um valor parcial que é comparado ao divisor.
 
-    Se o valor parcial for maior ou igual ao divisor, o bit correspondente do quociente é definido como 1 e subtrai-se o divisor do valor parcial.
+> Se o valor parcial for maior ou igual ao divisor, o bit correspondente do quociente é definido como 1 e subtrai-se o divisor do valor parcial.
+> Caso contrário, o bit do quociente é 0.
 
-    Caso contrário, o bit do quociente é 0.
-    Este processo se repete por 4 ciclos até que todos os bits sejam processados, resultando no quociente e no resto.
+> Este processo se repete por 4 ciclos até que todos os bits sejam processados, resultando no quociente e no resto.
 
 ### Unidade Lógica e Aritmética (ULA)
 
 A ULA é o módulo central que integra os quatro circuitos anteriores. Ela recebe dois operandos de 4 bits e utiliza um conjunto de multiplexadores para selecionar qual operação será enviada para a saída final.
 
 A seleção é feita através de 2 bits de controle (Sel), conforme a tabela abaixo:
-Bit de Seleção (S1 S0)	Operação	Descrição
-00	Adição	Soma simples de A + B
-01	Subtração	Subtração A - B via complemento de 2
-10	Multiplicação	Produto de A * B (Saída expandida)
-11	Divisão	Quociente de A / B
+| Bit (S1 S0) | Operação |
+| :---: | :--- |
+| 00 | Adição |
+| 01 | Subtração |
+| 10 | Multiplicação |
+| 11 | Divisão |
 
 ## Créditos
 Desenvolvido por: Raphael Henrique Dos Reis Gomes
