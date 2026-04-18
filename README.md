@@ -57,4 +57,5 @@ A seleção é feita através de 2 bits de controle (Sel), conforme a tabela aba
 
 ## Créditos
 Desenvolvido por: Raphael Henrique Dos Reis Gomes
+
 Disciplina: SSC0955-Introducao a Sistemas Computacionais - 2026
