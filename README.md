@@ -18,7 +18,7 @@ Este projeto apresenta uma Unidade Lógica e Aritmética (ULA) completa, capaz d
 
 ## Explicação do Funcionamento
 
-### Vídeo explicativo:
+### [Vídeo explicativo do projeto](https://youtu.be/cyj_CF3zvC8)
 
 ### Somador (Full Adder)
 
